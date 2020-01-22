@@ -235,7 +235,7 @@ footer .right {
 pre { color: white }
 .hide { display: none }
 
-@media (max-width: 400px) {
+@media (max-width: 500px) {
   #header #navigation-bar .right {
     text-align: center;
     flex: 0.8;
