@@ -1,0 +1,8 @@
+.keyword, .operator { color: #F92672 }
+.string  { color: #E6DB74 }
+.number, .user-const { color: #AE81FF }
+.inherited { color: #A6E22E; text-decoration: underline }
+.class { color: #A6E22E }
+.arg { color: #FD971F }
+.lib-func { color: #66D9EF }
+.storage { color: #66D9EF; font-style: italic }

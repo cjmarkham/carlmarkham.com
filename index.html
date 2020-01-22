@@ -1,36 +1,55 @@
 <!DOCTYPE html>
 <head>
-  <title></title>
-  <script src="typer.js"></script>
+  <title>Carl Markham</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <link rel="stylesheet" href="stylesheets/main.css" />
+  <link rel="stylesheet" href="stylesheets/highlighting.css" />
   <link rel="stylesheet" href="stylesheets/open-iconic.min.css" />
 </head>
 <body>
-  <header id="navigation-bar">
-    <div class="left">
-      <div id="icons">
-        <div id="close"></div>
-        <div id="minimize"></div>
-        <div id="maximize"></div>
+  <header id="header">
+    <div id="navigation-bar">
+      <div class="left">
+        <div id="icons">
+          <div id="close"></div>
+          <div id="minimize"></div>
+          <div id="maximize"></div>
+        </div>
+      </div>
+      <div class="right">
+        <h1 id="title"><span>index.ts</span> - carlmarkham.com</h1>
       </div>
     </div>
-    <div class="right">
-      <h1>index.html - site</h1>
-    </div>
-  </header>
-  <header id="tab-header">
-    <div class="left">
-      <p id="explorer">EXPLORER</p>
-    </div>
-    <div class="right">
-      <div id="tab-wrapper">
-        <div class="tab active">
-          <span>index.html</span>
-          <span class="tab-closer">x</span>
-        </div>
-        <div class="tab">
-          styles.css
-          <span class="tab-closer"></span>
+    <div id="tab-header">
+      <div class="left">
+        <p id="explorer">EXPLORER</p>
+      </div>
+      <div class="right">
+        <div id="tab-wrapper">
+          <div class="tab index" onclick="showTab('index')">
+            <span>index.ts</span>
+            <span class="tab-closer">x</span>
+          </div>
+          <div class="tab fog" onclick="showTab('fog')">
+            fog.php
+            <span class="tab-closer"></span>
+          </div>
+          <div class="tab givey" onclick="showTab('givey')">
+            givey.js
+            <span class="tab-closer"></span>
+          </div>
+          <div class="tab moltin" onclick="showTab('moltin')">
+            moltin.rb
+            <span class="tab-closer"></span>
+          </div>
+          <div class="tab env" onclick="showTab('env')">
+            .env
+            <span class="tab-closer"></span>
+          </div>
+          <div class="tab gitignore" onclick="showTab('gitignore')">
+            .gitignore
+            <span class="tab-closer"></span>
+          </div>
         </div>
       </div>
     </div>
@@ -39,71 +58,270 @@
     <div id="sidebar">
       <header>
         <span class="oi" data-glyph="chevron-bottom" title="icon name" aria-hidden="true"></span>
-        SITE
+        CARLMARKHAM.COM
       </header>
       <ul id="folder-root">
         <li>
           <p>
             <span class="oi" data-glyph="chevron-bottom" title="icon name" aria-hidden="true"></span>
             <span class="oi" data-glyph="folder" title="icon name" aria-hidden="true"></span>
-            home
+            jobs
           </p>
           <ul>
-            <li class="active">
-              <p>
+            <li class="fog">
+              <p onclick="showTab('fog', 'jobs > fog.php')">
                 <span class="oi" data-glyph="file" title="icon name" aria-hidden="true"></span>
-                index.html
+                fog.php
               </p>
             </li>
-            <li>
-              <p>
+            <li class="givey">
+              <p onclick="showTab('givey', 'jobs > givey.rb')">
                 <span class="oi" data-glyph="file" title="icon name" aria-hidden="true"></span>
-                about.html
+                givey.rb
               </p>
             </li>
+            <li class="moltin">
+              <p onclick="showTab('moltin', 'jobs > moltin.rb')">
+                <span class="oi" data-glyph="file" title="icon name" aria-hidden="true"></span>
+                moltin.rb
+              </p>
           </ul>
         </li>
-        <li>
-          <p>
-            <span class="oi" data-glyph="chevron-right" title="icon name" aria-hidden="true"></span>
-            <span class="oi" data-glyph="folder" title="icon name" aria-hidden="true"></span>
-            styles
+        <li class="env">
+          <p onclick="showTab('env')">
+            <span class="oi" data-glyph="file" title="icon name" aria-hidden="true"></span>
+            .env
+          </p>
+        </li>
+        <li class="gitignore">
+          <p onclick="showTab('gitignore')">
+            <span class="oi" data-glyph="file" title="icon name" aria-hidden="true"></span>
+            .gitignore
+          </p>
+        </li>
+        <li class="index">
+          <p onclick="showTab('index')">
+            <span class="oi" data-glyph="file" title="icon name" aria-hidden="true"></span>
+            index.ts
           </p>
         </li>
       </ul>
     </div>
     <div id="content">
-      <header>
-        stylesheets > main.css
+      <header id="breadcrumbs">
+        index.html
       </header>
       <div id="code-window">
+        <ul id="line-numbers">
+          <li>1</li>
+          <li>2</li>
+          <li>3</li>
+          <li>4</li>
+          <li>5</li>
+          <li>6</li>
+          <li>7</li>
+          <li>8</li>
+          <li>9</li>
+          <li>10</li>
+          <li>11</li>
+          <li>12</li>
+          <li>13</li>
+          <li>14</li>
+          <li>15</li>
+          <li>16</li>
+          <li>17</li>
+          <li>18</li>
+          <li>19</li>
+          <li>20</li>
+          <li>21</li>
+          <li>22</li>
+          <li>23</li>
+          <li>24</li>
+          <li>25</li>
+          <li>26</li>
+          <li>27</li>
+          <li>28</li>
+          <li>29</li>
+          <li>30</li>
+          <li>31</li>
+          <li>32</li>
+          <li>33</li>
+          <li>34</li>
+        </ul>
         <div id="text">
-<pre>
-1    interface Personals {
-2      Age: int
-3      Email: string
-4    }
-5
-6    const getPersonalDetails = ():Personals => {
-7      return {
-8        Age: 33,
-9        Email: 'doddsey65(at)gmail(dot)com',
-10      }
-11    }
-12
-13    getPersonalDetails()
+<pre class="index">
+<span class="storage">interface</span> <span class="inherited">Job</span> {
+  Name<span class="operator">:</span> <span class="storage">string</span>
+  Role<span class="operator">:</span> <span class="storage">string</span>
+  StartedAt<span class="operator">:</span> <span class="inherited">Date</span>
+  EndedAt<span class="operator">:</span> <span class="inherited">Date</span>
+}
+
+<span class="storage">interface</span> <span class="inherited">Personals</span> {
+  Email<span class="operator">:</span> <span class="storage">string</span>
+  Role<span class="operator">:</span> <span class="storage">string</span>
+  Jobs<span class="operator">?:</span> <span class="inherited">Job</span>[]
+}
+
+<span class="storage">const</span> <span class="class">personalDetails</span><span class="operator">:</span><span class="inherited">Personals</span> <span class="operator">=</span> {
+  Email: <span class="string">'doddsey65(at)gmail(dot)com'</span>,
+  Role: <span class="string">'Software Engineer'</span>,
+  Jobs: [{
+    Name: <span class="string">'FOG'</span>,
+    Role: <span class="string">'Software Engineer'</span>,
+    StartedAt: <span class="keyword">new</span> <span class="inherited">Date</span>(<span class="string">'2019-5-5'</span>),
+    EndedAt: <span class="keyword">new</span> <span class="inherited">Date</span>(<span class="string">'2019-5-5'</span>),
+  }, {
+    Name: <span class="string">'Givey'</span>,
+    Role: <span class="string">'Software Engineer'</span>,
+    StartedAt: <span class="keyword">new</span> <span class="inherited">Date</span>(<span class="string">'2019-5-5'</span>),
+    EndedAt: <span class="keyword">new</span> <span class="inherited">Date</span>(<span class="string">'2019-5-5'</span>),
+  }, {
+    Name: <span class="string">'Moltin'</span>,
+    Role: <span class="string">'Software Engineer'</span>,
+    StartedAt: <span class="keyword">new</span> <span class="inherited">Date</span>(<span class="string">'2019-5-5'</span>),
+    EndedAt: <span class="keyword">new</span> <span class="inherited">Date</span>(<span class="string">'2019-5-5'</span>),
+  }]
+}
 </pre>
+
+
+<pre class="hide fog">
+<span class="keyword">&lt;?php</span>
+
+<span class="keyword">namespace</span> <span class="inherited">CarlMarkham</span>;
+
+<span class="storage">class</span> <span class="inherited">FOG</span> {
+  <span class="keyword">private</span> $title <span class="operator">=</span> <span class="string">'Software Engineer'</span>;
+
+  <span class="keyword">public</span> <span class="storage">function</span> <span class="class">duties</span>() {
+    <span class="keyword">return</span> [
+      <span class="string">'Something interesting here'</span>,
+      <span class="string">'Something interesting here'</span>,
+      <span class="string">'Something interesting here'</span>,
+      <span class="string">'Something interesting here'</span>,
+    ]
+  }
+
+  <span class="keyword">public</span> <span class="storage">function</span> <span class="class">tech</span>() {
+    <span class="keyword">return</span> [
+      <span class="string">'PHP'</span>,
+    ]
+  }
+
+  <span class="keyword">public</span> <span class="storage">function</span> <span class="class">toJson</span>() {
+    <span class="keyword">return</span> <span class="lib-func">json_encode</span>([
+      <span class="user-const">duties</span> <span class="operator">=></span> $this<span class="operator">-></span><span class="class">duties</span>(),
+      <span class="user-const">tech</span> <span class="operator">=></span> $this<span class="operator">-></span><span class="class">tech</span>(),
+    ])
+  }
+}
+</pre>
+
+
+
+<pre class="hide givey">
+(() <span class="lib-func">=></span> {
+  <span class="storage">const</span> title <span class="operator">=</span> <span class="string">'Software Engineer'</span>
+
+  <span class="storage">const</span> duties <span class="operator">=</span> () <span class="lib-func">=></span> {
+    <span class="keyword">return</span> [
+      <span class="string">'Something interesting here'</span>,
+      <span class="string">'Something interesting here'</span>,
+      <span class="string">'Something interesting here'</span>,
+      <span class="string">'Something interesting here'</span>,
+    ]
+  }
+
+  <span class="storage">const</span> tech <span class="operator">=</span> () <span class="lib-func">=></span> {
+    <span class="keyword">return</span> [
+      <span class="string">'Ruby/Rails'</span>,
+      <span class="string">'Javascript'</span>,
+    ]
+  }
+
+  <span class="storage">const</span> toJson <span class="operator">=</span> () <span class="lib-func">=></span> {
+    <span class="keyword">return</span> <span class="lib-func">JSON.stringify</span>({
+      duties,
+      tech,
+    })
+  }
+})()
+</pre>
+
+
+
+<pre class="hide moltin">
+<span class="keyword">class</span> <span class="inherited">Job::Moltin</span> <span class="inherited"><</span> <span class="inherited">Job</span>
+
+  @@title = <span class="string">'Software Engineer'</span>
+
+  <span class="keyword">def</span> <span class="function">duties</span>
+    [
+      <span class="string">'Something interesting here',</span>
+      <span class="string">'Something interesting here',</span>
+      <span class="string">'Something interesting here',</span>
+      <span class="string">'Something interesting here',</span>
+    ]
+  <span class="keyword">end</span>
+
+  <span class="keyword">def</span> <span class="function">tech</span>
+  [
+    <span class="string">'JavaScript/TypeScript',</span>
+    <span class="string">'Ruby',</span>
+    <span class="string">'Docker',</span>
+    <span class="string">'Terraform',</span>
+  ]
+  <span class="keyword">end</span>
+
+  <span class="keyword">def</span> <span class="function">to_json</span>
+    {
+      <span class="user-const">duties</span>: duties,
+      <span class="user-const">tech</span>: tech,
+    }.to_json
+  <span class="keyword">end</span>
+<span class="keyword">end</span>
+</pre>
+
+
+<pre class="hide env">
+BASE_URL=https://carlmarkham.com
+ACCESS_KEY=ABC123
+</pre>
+
+
+<pre class="hide gitignore">
+.env
+</pre>
+
+
+
         </div>
       </div>
     </div>
   </section>
 
+  <footer>
+    <div class="left">
+      <span>
+        <span class="oi" data-glyph="fork" title="icon name" aria-hidden="true"></span>
+        master*
+      </span>
+      <span>
+        0<span class="oi" data-glyph="arrow-bottom" title="icon name" aria-hidden="true"></span>
+        1<span class="oi" data-glyph="arrow-top" title="icon name" aria-hidden="true"></span>
+      </span>
+      <span>&copy; carlmarkham.com</span>
+    </div>
+    <div class="right">
+      <span>Ln 198, Col 13</span>
+      <span>Spaces: 2</span>
+      <span>UTF-8</span>
+      <span>LF</span>
+      <span id="language">TypeScript</span>
+      <span class="oi" data-glyph="bell" title="icon name" aria-hidden="true"></span>
+    </div>
+  </footer>
 
-
-  <script>
-    document.addEventListener('DOMContentLoaded', () => {
-      const el = document.getElementById('text').getElementsByTagName('pre')[0]
-      typeOut(el, 50)
-    })
-  </script>
+  <script src="scripts/main.js"></script>
 </body>

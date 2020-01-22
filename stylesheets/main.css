@@ -1,5 +1,5 @@
 html, body {
-  height: 100%;
+  height: 100vh;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   font-size: 14px;
 }
@@ -8,16 +8,13 @@ body {
   background: #1e1f1c;
   color: white;
   margin: 0;
-}
-
-#main {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
 }
 
-#main {
-  height: 100%;
-}
+header { flex: 0.07 }
+#main { flex: 0.9 }
+footer { flex: 0.03; align-items: center; }
 
 #icons {
   margin-left: 10px;
@@ -44,29 +41,33 @@ body {
   background: #27ca41;
 }
 
-header, #main {
+header, #main, #navigation-bar {
   display: flex;
   flex-direction: row;
 }
 
-header .left, #sidebar {
+#header {
+  flex-direction: column;
+}
+
+header .left, #sidebar, #navigation-bar .left {
   flex: 0.2
 }
 
-header .right, #content {
+header .right, #content, #navigation-bar .right {
   flex: 0.8;
 }
 
-header#navigation-bar h1 {
+#header #navigation-bar h1 {
   margin-bottom: 0;
 }
 
-header#navigation-bar .right {
+#header #navigation-bar .right {
   text-align: center;
   flex: 0.9;
 }
 
-header#navigation-bar .left {
+#header #navigation-bar .left {
   flex: 0.1;
 }
 
@@ -93,6 +94,7 @@ header h1 {
 
 #tab-header {
   align-items: flex-end;
+  display: flex;
 }
 
 #tab-wrapper .tab span:first-child {
@@ -132,12 +134,14 @@ header h1 {
 }
 
 #sidebar ul li p {
-  display: inline-block;
   margin: 0;
   margin-left: 32px;
   padding: 5px 0;
   color: #ccccc6;
+  cursor: pointer;
 }
+
+.tab { cursor: pointer }
 
 #sidebar ul li > ul li:last-child {
   margin-bottom: 0;
@@ -190,11 +194,13 @@ header h1 {
   padding: 0 10px;
   flex: 0.01;
   margin: 10px;
-  color: #ccccc6;
+  margin-top: 15px;
+  line-height: 22px;
+  color: #909089;
 }
 
 #code-window #line-numbers li {
-  margin: 6px 0;
+  margin: 0;
 }
 
 #code-window #text {
@@ -202,3 +208,29 @@ header h1 {
   color: #ccccc6;
   line-height: 22px;
 }
+
+footer {
+  display: flex;
+  flex-direction: row;
+  background: #404338;
+  padding: 5px 10px;
+}
+
+footer .right > span {
+  margin-left: 10px;
+}
+
+footer .left > span {
+  margin-right: 10px;
+}
+
+footer .left, footer .right {
+  flex: 0.5;
+}
+
+footer .right {
+  text-align: right;
+}
+
+pre { color: white }
+.hide { display: none }
