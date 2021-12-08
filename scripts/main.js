@@ -13,15 +13,15 @@ const pages = {
   },
   givey: {
     name: 'givey',
-    crumbs: 'jobs > givey.js',
-    title: 'givey.js',
-    language: 'JavaScript',
+    crumbs: 'jobs > givey.rb',
+    title: 'givey.rb',
+    language: 'Ruby',
   },
   moltin: {
     name: 'moltin',
-    crumbs: 'jobs > moltin.rb',
-    title: 'moltin.rb',
-    language: 'Ruby',
+    crumbs: 'jobs > moltin.ts',
+    title: 'moltin.ts',
+    language: 'TypeScript',
   },
   env: {
     name: '.env',
