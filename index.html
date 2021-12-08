@@ -11,8 +11,8 @@
     <div id="navigation-bar">
       <div class="left">
         <div id="icons">
-          <div id="close"></div>
-          <div id="minimize"></div>
+          <div id="close" onclick="confirm('Save Changes?')"></div>
+          <div id="minimize" onclick="alert('Pretend this minimized the window...')"></div>
           <div id="maximize"></div>
         </div>
       </div>
@@ -35,11 +35,11 @@
             <span class="tab-closer"></span>
           </div>
           <div class="tab givey" onclick="showTab('givey')">
-            givey.js
+            givey.rb
             <span class="tab-closer"></span>
           </div>
           <div class="tab moltin" onclick="showTab('moltin')">
-            moltin.rb
+            moltin.ts
             <span class="tab-closer"></span>
           </div>
           <div class="tab env" onclick="showTab('env')">
@@ -48,6 +48,10 @@
           </div>
           <div class="tab gitignore" onclick="showTab('gitignore')">
             .gitignore
+            <span class="tab-closer"></span>
+          </div>
+          <div class="tab tools" onclick="showTab('tools')">
+            tools.json
             <span class="tab-closer"></span>
           </div>
         </div>
@@ -105,6 +109,12 @@
             index.ts
           </p>
         </li>
+        <li class="tools">
+          <p onclick="showTab('tools')">
+            <span class="oi" data-glyph="file" title="icon name" aria-hidden="true"></span>
+            tools.json
+          </p>
+        </li>
       </ul>
     </div>
     <div id="content">
@@ -149,12 +159,13 @@
           <li>34</li>
         </ul>
         <div id="text">
+
 <pre class="index">
 <span class="storage">interface</span> <span class="inherited">Job</span> {
   Name<span class="operator">:</span> <span class="storage">string</span>
   Role<span class="operator">:</span> <span class="storage">string</span>
   StartedAt<span class="operator">:</span> <span class="inherited">Date</span>
-  EndedAt<span class="operator">:</span> <span class="inherited">Date</span>
+  EndedAt<span class="operator">?:</span> <span class="inherited">Date</span>
 }
 
 <span class="storage">interface</span> <span class="inherited">Personals</span> {
@@ -163,14 +174,14 @@
   Jobs<span class="operator">?:</span> <span class="inherited">Job</span>[]
 }
 
-<span class="storage">const</span> <span class="class">personalDetails</span><span class="operator">:</span><span class="inherited">Personals</span> <span class="operator">=</span> {
+<span class="storage">const</span> <span class="class">personalDetails</span><span class="operator">:</span> <span class="inherited">Personals</span> <span class="operator">=</span> {
   Email: <span class="string">'doddsey65(at)gmail(dot)com'</span>,
   Role: <span class="string">'Software Engineer'</span>,
   Jobs: [{
     Name: <span class="string">'FOG'</span>,
     Role: <span class="string">'Software Engineer'</span>,
-    StartedAt: <span class="keyword">new</span> <span class="inherited">Date</span>(<span class="string">'2019-5-5'</span>),
-    EndedAt: <span class="keyword">new</span> <span class="inherited">Date</span>(<span class="string">'2019-5-5'</span>),
+    StartedAt: <span class="keyword">new</span> <span class="inherited">Date</span>(<span class="string">'2011-5-5'</span>),
+    EndedAt: <span class="keyword">new</span> <span class="inherited">Date</span>(<span class="string">'2012-5-5'</span>),
   }, {
     Name: <span class="string">'Givey'</span>,
     Role: <span class="string">'Software Engineer'</span>,
@@ -178,9 +189,8 @@
     EndedAt: <span class="keyword">new</span> <span class="inherited">Date</span>(<span class="string">'2019-5-5'</span>),
   }, {
     Name: <span class="string">'Moltin'</span>,
-    Role: <span class="string">'Software Engineer'</span>,
-    StartedAt: <span class="keyword">new</span> <span class="inherited">Date</span>(<span class="string">'2019-5-5'</span>),
-    EndedAt: <span class="keyword">new</span> <span class="inherited">Date</span>(<span class="string">'2019-5-5'</span>),
+    Role: <span class="string">'Senior Software Engineer'</span>,
+    StartedAt: <span class="keyword">new</span> <span class="inherited">Date</span>(<span class="string">'2019-4-23'</span>),
   }]
 }
 </pre>
@@ -196,16 +206,17 @@
 
   <span class="keyword">public</span> <span class="storage">function</span> <span class="class">duties</span>() {
     <span class="keyword">return</span> [
-      <span class="string">'Something interesting here'</span>,
-      <span class="string">'Something interesting here'</span>,
-      <span class="string">'Something interesting here'</span>,
-      <span class="string">'Something interesting here'</span>,
+      <span class="string">'Co-wrote a PHP framework from scratch (for some reason)'</span>,
+      <span class="string">'Co-wrote existing website from scratch'</span>,
     ]
   }
 
   <span class="keyword">public</span> <span class="storage">function</span> <span class="class">tech</span>() {
     <span class="keyword">return</span> [
       <span class="string">'PHP'</span>,
+      <span class="string">'MySQL'</span>,
+      <span class="string">'HTML/CSS'</span>,
+      <span class="string">'JavaScript'</span>,
     ]
   }
 
@@ -221,56 +232,26 @@
 
 
 <pre class="hide givey">
-(() <span class="lib-func">=></span> {
-  <span class="storage">const</span> title <span class="operator">=</span> <span class="string">'Software Engineer'</span>
-
-  <span class="storage">const</span> duties <span class="operator">=</span> () <span class="lib-func">=></span> {
-    <span class="keyword">return</span> [
-      <span class="string">'Something interesting here'</span>,
-      <span class="string">'Something interesting here'</span>,
-      <span class="string">'Something interesting here'</span>,
-      <span class="string">'Something interesting here'</span>,
-    ]
-  }
-
-  <span class="storage">const</span> tech <span class="operator">=</span> () <span class="lib-func">=></span> {
-    <span class="keyword">return</span> [
-      <span class="string">'Ruby/Rails'</span>,
-      <span class="string">'Javascript'</span>,
-    ]
-  }
-
-  <span class="storage">const</span> toJson <span class="operator">=</span> () <span class="lib-func">=></span> {
-    <span class="keyword">return</span> <span class="lib-func">JSON.stringify</span>({
-      duties,
-      tech,
-    })
-  }
-})()
-</pre>
-
-
-
-<pre class="hide moltin">
 <span class="keyword">class</span> <span class="inherited">Job::Moltin</span> <span class="inherited"><</span> <span class="inherited">Job</span>
 
   @@title = <span class="string">'Software Engineer'</span>
 
   <span class="keyword">def</span> <span class="function">duties</span>
     [
-      <span class="string">'Something interesting here',</span>
-      <span class="string">'Something interesting here',</span>
-      <span class="string">'Something interesting here',</span>
-      <span class="string">'Something interesting here',</span>
+      <span class="string">'Created mobile app using React Native',</span>
+      <span class="string">'Implemented redesign of customer facing application',</span>
+      <span class="string">'Implemented new API version following JSONAPI spec',</span>
+      <span class="string">'Created a JavaScript SDK for the API',</span>
+      <span class="string">'Implemented an embeddable widget module',</span>
     ]
   <span class="keyword">end</span>
 
   <span class="keyword">def</span> <span class="function">tech</span>
   [
     <span class="string">'JavaScript/TypeScript',</span>
-    <span class="string">'Ruby',</span>
-    <span class="string">'Docker',</span>
-    <span class="string">'Terraform',</span>
+    <span class="string">'React Native',</span>
+    <span class="string">'Ruby/Rails',</span>
+    <span class="string">'PostgreSQL',</span>
   ]
   <span class="keyword">end</span>
 
@@ -284,6 +265,40 @@
 </pre>
 
 
+
+<pre class="hide moltin">
+(() <span class="lib-func">=></span> {
+  <span class="storage">const</span> title <span class="operator">=</span> <span class="string">'Senior Software Engineer'</span>
+
+  <span class="storage">const</span> duties <span class="operator">=</span> () <span class="lib-func">=></span> {
+    <span class="keyword">return</span> [
+      <span class="string">'Creation of Product Information Management Serive'</span>,
+      <span class="string">'Implemented a Component Test Framework written in TypeScript'</span>,
+      <span class="string">'Mentoring junior/new team members'</span>,
+    ]
+  }
+
+  <span class="storage">const</span> tech <span class="operator">=</span> () <span class="lib-func">=></span> {
+    <span class="keyword">return</span> [
+      <span class="string">'Ruby/Rails'</span>,
+      <span class="string">'JavaScript/TypeScript'</span>,
+      <span class="string">'Docker/Kubernetes'</span>,
+      <span class="string">'PHP'</span>,
+      <span class="string">'Docker/Kubernetes'</span>,
+      <span class="string">'AWS (S3, EKS, ELS)'</span>,
+    ]
+  }
+
+  <span class="storage">const</span> toJson <span class="operator">=</span> () <span class="lib-func">=></span> {
+    <span class="keyword">return</span> <span class="lib-func">JSON.stringify</span>({
+      duties,
+      tech,
+    })
+  }
+})()
+</pre>
+
+
 <pre class="hide env">
 BASE_URL=https://carlmarkham.com
 ACCESS_KEY=ABC123
@@ -292,6 +307,23 @@ ACCESS_KEY=ABC123
 
 <pre class="hide gitignore">
 .env
+</pre>
+
+<pre class="hide tools">
+[
+  <span class="string">"VSCode"</span>,
+  <span class="string">"IntelliJ"</span>,
+  <span class="string">"Table Plus"</span>,
+  <span class="string">"Mongo Compose"</span>,
+  <span class="string">"Git"</span>,
+  <span class="string">"Github"</span>,
+  <span class="string">"Gitlab"</span>,
+  <span class="string">"CircleCI"</span>,
+  <span class="string">"BuddyCI"</span>,
+  <span class="string">"kubectl"</span>,
+  <span class="string">"k8s"</span>,
+  <span class="string">"k9s"</span>
+]
 </pre>
 
 

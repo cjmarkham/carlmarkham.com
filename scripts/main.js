@@ -34,7 +34,13 @@ const pages = {
     crumbs: '.gitignore',
     title: '.gitignore',
     language: 'Plain Text',
-  }
+  },
+  tools: {
+    name: 'tools.json',
+    crumbs: 'tools.json',
+    title: 'tools.json',
+    language: 'JSON',
+  },
 }
 
 const showTab = (name) => {
@@ -76,4 +82,20 @@ window.addEventListener('load', () => {
     showTab('index')
     document.getElementById('sidebar').getElementsByClassName('index')[0].classList.add('active')
   }
+})
+
+document.addEventListener('DOMContentLoaded', () => {
+  let fullScreen = false
+
+  document.getElementById('maximize').addEventListener('click', async () => {
+    const el = document.getElementsByTagName('body')[0]
+
+    if (!fullScreen) {
+      await el.requestFullscreen()
+      fullScreen = true
+    } else {
+      await document.exitFullscreen()
+      fullScreen = false
+    }
+  })
 })
